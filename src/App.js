@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import * as fcl from "@onflow/fcl";
+import * as types from "@onflow/types";
+
+// Configure FCL to Testnet and Testnet wallets
+fcl.config()
+  .put("accessNode.api", "https://access-testnet.onflow.org")
+  .put("discovery.wallet", "https://fcl-discovery.onflow.org/testnet/authn")
+
+// 0xfb3acf2dd1569a14 - Blocto Wallet
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello, World!!</h1>
+      <button onClick={() => getTheGreeting()}></button>
     </div>
   );
 }
 
-export default App;
+export default App
